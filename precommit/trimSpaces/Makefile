@@ -1,5 +1,6 @@
 CC = g++
-CFLAGS = -Wall
+LANG_STD = -std=c++17
+CFLAGS = $(LANG_STD) -Wall
 TEST_FOLDER = ./tests
 SRC_FOLDER = ./src
 SRC_COMPONENTS  = $(SRC_FOLDER)/*.cpp
@@ -7,8 +8,8 @@ INCLUDE_PATH = ./src
 TEST_TARGET = testtrimspaces
 
 test:
-	$(CC) $(CFLAGS) $(TEST_FOLDER)/*.cpp -o $(TEST_TARGET)
-	#$(CC) $(CFLAGS) -I"$(INCLUDE_PATH)" $(TEST_FOLDER)/*.cpp -o $(TARGET)
+	$(CC) $(CFLAGS) $(SRC_COMPONENTS)  $(TEST_FOLDER)/*.cpp -o $(TEST_TARGET)
+	./$(TEST_TARGET)
 
 clean:
 	rm $(TEST_TARGET)
