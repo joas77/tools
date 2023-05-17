@@ -7,10 +7,21 @@ void testStripLeft() {
     auto msgInput = std::string{"     Text with lot of spaces at the begining"};
     auto msgExpected = std::string{"Text with lot of spaces at the begining"};
 
-    std::cout << "input string = " << msgInput << " --- size = " << msgInput.size() <<  std::endl;
+    printStringInfo(msgInput, "INPUT");
     stripLeft(msgInput);
-    std::cout << "expected  string = " << msgExpected <<  " --- size = " << msgExpected.size() << std::endl; 
-    std::cout << "output  string = " << msgInput <<  " --- size = " << msgInput.size() << std::endl;
+    printStringInfo(msgExpected, "EXPECTED");
+    printStringInfo(msgInput, "OUTPUT");
+    assert(msgInput == msgExpected);
+}
+
+void testStripLeftManyBlankChars() {
+    auto msgInput = std::string{"  \t  \nText with many diferent blank characteres (tab, spaces, newlines etc ) at the begining"};
+    auto msgExpected = std::string{"Text with many diferent blank characteres (tab, spaces, newlines etc ) at the begining"};
+
+    printStringInfo(msgInput, "INPUT");
+    stripLeft(msgInput, " \t\n");
+    printStringInfo(msgExpected, "EXPECTED");
+    printStringInfo(msgInput, "OUTPUT");
     assert(msgInput == msgExpected);
 }
 
@@ -22,4 +33,8 @@ void testStripRight() {
     std::cout << "expected  string = " << msgExpected <<  " --- size = " << msgExpected.size() << std::endl; 
     std::cout << "output  string = " << msgInput <<  " --- size = " << msgInput.size() << std::endl;
     assert(msgInput == msgExpected);
+}
+
+void printStringInfo(const std::string& str, const std::string& type) {
+    std::cout << type << " string = \"" << str << "\" --- size  = " << str.size() << std::endl;
 }

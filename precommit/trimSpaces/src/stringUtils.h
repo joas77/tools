@@ -3,7 +3,7 @@
 
 #include <string>
 
-void stripLeft(std::string& str);
+void stripLeft(std::string& str, const std::string& nonDesiredChars=" ");
 void stripRight(std::string& str);
 
 #endif

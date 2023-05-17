@@ -1,12 +1,12 @@
 #include <algorithm>
 #include "stringUtils.h"
 
-void stripLeft(std::string& str) {
+void stripLeft(std::string& str, const std::string& nonDesiredChars) {
 
     auto firstNonSpace = std::find_if(
         str.begin(), str.end(),
-        [](char c){
-            return c != ' ';
+        [&nonDesiredChars](char c){
+            return nonDesiredChars.find(c) == std::string::npos;
         }
     );
     str.erase(str.begin(), firstNonSpace);

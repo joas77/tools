@@ -6,5 +6,9 @@
 
 void testStripRight();
 void testStripLeft();
+void testStripLeftManyBlankChars();
+
+/*** HELPER FUNCTIONS ***/
+void printStringInfo(const std::string& str, const std::string& type);
 
 #endif
