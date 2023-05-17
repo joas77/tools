@@ -3,6 +3,7 @@
 
 int main() {
     std::cout << "***************** Testing trimSpaces tool *********" << std::endl;
-    testStripRight();
+    //testStripRight();
+    testStripLeft();
     return 0;
 }

@@ -5,5 +5,6 @@
 #include "../src/stringUtils.h"
 
 void testStripRight();
+void testStripLeft();
 
 #endif

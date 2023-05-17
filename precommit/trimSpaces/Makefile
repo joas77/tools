@@ -1,6 +1,6 @@
 CC = g++
-LANG_STD = -std=c++17
-CFLAGS = $(LANG_STD) -Wall
+LANG_STD = -std=c++2a
+CFLAGS = $(LANG_STD) -Wall -Wextra -Wpedantic
 TEST_FOLDER = ./tests
 SRC_FOLDER = ./src
 SRC_COMPONENTS  = $(SRC_FOLDER)/*.cpp
