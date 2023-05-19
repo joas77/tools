@@ -20,5 +20,5 @@ void stripRight(std::string& str, const std::string& nonDesiredChars){
             return nonDesiredChars.find(c) == std::string::npos;
         }
     );
-    str.erase(str.begin(), lastNonSpace.base() - 1);   
+    str.erase(lastNonSpace.base(), str.end());
 }
