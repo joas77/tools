@@ -12,6 +12,13 @@ void stripLeft(std::string& str, const std::string& nonDesiredChars) {
     str.erase(str.begin(), firstNonSpace);
 }
 
-void stripRight(std::string& str){
-    str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
+void stripRight(std::string& str, const std::string& nonDesiredChars){
+
+    auto lastNonSpace = std::find_if(
+        str.rbegin(), str.rend(),
+        [&nonDesiredChars](char c){
+            return nonDesiredChars.find(c) == std::string::npos;
+        }
+    );
+    str.erase(str.begin(), lastNonSpace.base() - 1);   
 }
