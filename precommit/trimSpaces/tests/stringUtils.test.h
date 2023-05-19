@@ -2,7 +2,7 @@
 #define STRINGUTILS_TEST_H
 
 #include <iostream>
-#include "../src/stringUtils.h"
+#include "../src/stringUtils/stringUtils.h"
 
 void testStripRight();
 void testStripLeft();

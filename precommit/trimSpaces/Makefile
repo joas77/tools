@@ -3,7 +3,7 @@ LANG_STD = -std=c++2a
 CFLAGS = $(LANG_STD) -Wall -Wextra -Wpedantic
 TEST_FOLDER = ./tests
 SRC_FOLDER = ./src
-SRC_COMPONENTS  = $(SRC_FOLDER)/*.cpp
+SRC_COMPONENTS  = $(SRC_FOLDER)/stringUtils/*.cpp
 INCLUDE_PATH = ./src
 TEST_TARGET = testtrimspaces
 
